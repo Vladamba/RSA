@@ -1,0 +1,64 @@
+﻿<Window x:Class="Laba3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="EncryptMe" Height="220" Width="400">
+    <StackPanel>
+        <Button Content="Выбрать файл" Width="100" Margin="10px" Click="btnClickOpenFile"/>
+        
+        <Grid Margin="10px">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120px"></ColumnDefinition>
+                <ColumnDefinition Width="15px"></ColumnDefinition>
+                <ColumnDefinition Width="50px"></ColumnDefinition>
+                <ColumnDefinition Width="30px"></ColumnDefinition>
+                <ColumnDefinition Width="50px"></ColumnDefinition>
+                <ColumnDefinition Width="30px"></ColumnDefinition>
+                <ColumnDefinition Width="50px"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="p:"/>
+            <TextBox Grid.Row="0" Grid.Column="2" Name="tbP"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="3" Text="q: " HorizontalAlignment="Right" />
+            <TextBox Grid.Row="0" Grid.Column="4" Name="tbQ"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="5" Text="e: " HorizontalAlignment="Right" />
+            <TextBox Grid.Row="0" Grid.Column="6" Name="tbE"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="r:"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Name="tbR"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="d: " HorizontalAlignment="Right"/>
+            <TextBox Grid.Row="1" Grid.Column="4" Name="tbD"/>
+
+            <RadioButton Grid.Row="0" Grid.Column="0" GroupName="Transform" Checked="rbEncryptChecked" IsChecked="True" Content="Шифрование"/>
+            <RadioButton Grid.Row="1" Grid.Column="0" GroupName="Transform" Checked="rbDecryptChecked" Content="Дешифрование"/>
+        </Grid>
+        
+        <Button Content="Сохранить файл" Width="100" Margin="10px" Click="btnClickSaveFile"/>
+        
+        <Grid  Margin="10px">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110px"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Исходный тескт:"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Name="tbSourceText"/>
+            
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Полученный текст:"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Name="tbResultText"/>
+        </Grid>
+    </StackPanel>
+</Window>
+
